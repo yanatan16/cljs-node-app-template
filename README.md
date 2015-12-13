@@ -1,6 +1,11 @@
 # Clojurescript Node App Template
 
-A Leiningen template for Clojurescript-based node apps.
+A minimalistic Leiningen template for Clojurescript-based node apps.
+
+It supports creating node binaries, libraries, and regular projects.
+It sets up testing infrastructure using `cljs.test` and [lein-doo](https://github.com/bensu/doo).
+
+It is currently not entirely documented, but I'll try to work on that in the coming months.
 
 ## Usage
 
