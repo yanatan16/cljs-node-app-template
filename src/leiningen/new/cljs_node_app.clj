@@ -23,5 +23,5 @@
              ["LICENSE" (render "LICENSE" data)]
              ["src/{{nested-dirs}}.cljs" (render "core.cljs" data)]
              ["test/{{nested-dirs}}_test.cljs" (render "core_test.cljs" data)]
-             ["test/runner.cljs" (render "runner.cljs" data)]
+             ["test/{{nested-dirs}}_runner.cljs" (render "runner.cljs" data)]
              )))

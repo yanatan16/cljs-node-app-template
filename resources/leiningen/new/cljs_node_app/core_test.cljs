@@ -1,6 +1,10 @@
 (ns {{namespace}}-test
   (:require [cljs.test :refer-macros [deftest testing is]]
-            [{{namespace}} :refer [-main]]))
+            [{{namespace}} :refer [run]]))
 
-(deftest fix-me-test
-  (is (= :success (-main))))
+(deftest run-test
+  (is (= (run ["node" "myscript" "-h"])
+         {:arguments ["node" "myscript"]
+          :options {:help true}
+          :summary "  -h, --help"
+          :errors nil})))

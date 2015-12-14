@@ -6,25 +6,55 @@ FIXME: Write a one-line description of your library/project.
 
 FIXME: Write a paragraph about the library/project and highlight its goals.
 
-## Install
+# cljs-node-app Template Docs
 
-```sh
-npm install {{raw-name}}
+## Overview
+
+The following code structure has been created:
+
+```
+.
+├── LICENSE
+├── README.md
+├── project.clj
+├── src
+│   └── {{nested-dirs}}.cljs
+└── test
+    ├── {{nested-dirs}}_test.cljs
+    └── {{nested-dirs}}_runner.cljs
 ```
 
-Now you can run the binary: `{{raw-name}}`
+## Editing
+
+Edit `src/{{nested-dirs}}.cljs` and create other files in `src` as your node application.
+Make sure to `(set! *main-cli-fn* some-fn)` for the main build export.
+Note that its best to just access `(.-argv cljs.nodejs/process)` to get command line arguments.
 
 ## Usage
 
-To build the clojurescript, use `lein build` (aliased to `lein cljsbuild once main`).
+You should `lein npm install` before doing anything to ensure you get the `source-map-support` library.
 
-To run the node app use `node build/main.js`.
+To build the clojurescript into a node script, use `lein build` (aliased to `lein cljsbuild once main`).
+To then run the node app use `node build/main.js`.
+
+You can add clojure and clojurescript dependencies in the normal `:dependency` spot.
+You can also add `npm` dependencies in the `:npm {:dependency []}` spot.
 
 ## Testing
 
 To test once, use `lein test` (which is aliased to `lein doo node test-node once`).
+To watch code for changes and re-test, use `lein test-auto`.
 
-To watch code for changes and re-test, use `lein test-auto`
+## Distribution
+
+You can distribute your app via npm by doing the following:
+
+- Uncomment the line `["npm" "publish"]` in the `:release-tasks` section of `project.clj`
+- Edit `:npm {:package {...}}` in `project.clj` as you would your `package.json` file. See npm docs for details. (If you want to distribute a public library, use `:private false`.
+
+To create a build for release, simply call `lein release`. To create a build for snapshot, use `lein snapshot`.
+Both of these call `lein build` and tag the commit.
+Release will also deploy a build to a maven repo (and/or npm).
 
 ## License
 

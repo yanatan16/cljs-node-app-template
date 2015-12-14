@@ -1,4 +1,4 @@
-(ns runner
+(ns {{namespace}}-runner
   (:require [doo.runner :refer-macros [doo-tests]]
             [{{namespace}}-test]))
 
