@@ -1,4 +1,4 @@
-(defproject cljs-node-app/lein-template "0.2.1-SNAPSHOT"
+(defproject cljs-node-app/lein-template "0.2.1"
   :description "Clojurescript Node App Leiningen Template"
   :url "https://github.com/yanatan16/cljs-node-app-template"
   :license {:name "Eclipse Public License"
