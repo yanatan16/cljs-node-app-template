@@ -32,16 +32,7 @@
 
   :aliases {"build" ["cljsbuild" "once" "main"]
             "test" ["doo" "node" "test-node" "once"]
-            "test-auto" ["doo" "node" "test-node" "auto"]
-
-            ;; lein snapshot is meant to build and commit the built js files
-            ;; for snapshots, instead of committing them with cljs code
-            "snapshot" ["do"
-                        "vcs" "assert-committed,"
-                        "clean,"
-                        "build,"
-                        "vcs" "commit,"
-                        "vcs" "tag"]}
+            "test-auto" ["doo" "node" "test-node" "auto"]}
 
   ;; This release-task does lein npm publish in addition to lein deploy
   :release-tasks [["vcs" "assert-committed"]

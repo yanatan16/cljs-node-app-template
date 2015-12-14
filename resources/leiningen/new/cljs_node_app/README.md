@@ -52,9 +52,8 @@ You can distribute your app via npm by doing the following:
 - Uncomment the line `["npm" "publish"]` in the `:release-tasks` section of `project.clj`
 - Edit `:npm {:package {...}}` in `project.clj` as you would your `package.json` file. See npm docs for details. (If you want to distribute a public library, use `:private false`.
 
-To create a build for release, simply call `lein release`. To create a build for snapshot, use `lein snapshot`.
-Both of these call `lein build` and tag the commit.
-Release will also deploy a build to a maven repo (and/or npm).
+To create a build for release, simply call `lein release`.
+This calls `lein do clean, build`, tags the commit, and deploys a build to either/both a maven repo and/or npm.
 
 ## License
 

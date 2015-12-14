@@ -19,6 +19,7 @@
     (->files data
              ["project.clj" (render "project.clj" data)]
              [".gitignore" (render "gitignore" data)]
+             [".npmignore" (render "npmignore" data)]
              ["README.md" (render "README.md" data)]
              ["LICENSE" (render "LICENSE" data)]
              ["src/{{nested-dirs}}.cljs" (render "core.cljs" data)]

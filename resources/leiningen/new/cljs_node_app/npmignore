@@ -9,7 +9,7 @@ pom.xml.asc
 /.nrepl-port
 .hgignore
 .hg/
-/build
+/build/test-*
 package.json
 /.cljs_*_repl
 /node_modules
